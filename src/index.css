@@ -1,0 +1,112 @@
+/* ------------------------------------------------------------------ */
+/* TAILWIND                                                            */
+/* Tailwind v4 (most new Vite projects). If you're on v3, see below.   */
+/* ------------------------------------------------------------------ */
+@import "tailwindcss";
+
+/* Tailwind v3 users: delete the line above and use these three instead:
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*/
+
+/* ------------------------------------------------------------------ */
+/* BASE STYLES                                                         */
+/* Everything lives in @layer base so Tailwind utilities always win.   */
+/* ------------------------------------------------------------------ */
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: #070707;
+    color: #ffffff;
+    font-family:
+      "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  /* Text selection */
+  ::selection {
+    background-color: rgba(139, 92, 246, 0.35);
+    color: #ffffff;
+  }
+
+  /* Keyboard focus fallback for anything without its own ring */
+  :focus-visible {
+    outline: 2px solid #a78bfa;
+    outline-offset: 2px;
+  }
+
+  /* Inputs inherit the page font */
+  input,
+  button,
+  textarea,
+  select {
+    font-family: inherit;
+  }
+
+  /* Buttons feel clickable */
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+
+  /* Dark scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    border: 2px solid #070707;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.28);
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
