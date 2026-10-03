@@ -8,6 +8,9 @@ const navLinks = [
   { name: "About", path: "/about" },
 ];
 
+// Works locally ("/") and on GitHub Pages ("/learnspherehub/")
+const logoSrc = `${import.meta.env.BASE_URL}logo.png`;
+
 // Inline spacing so global CSS resets can't override it
 const space = {
   nav: { padding: "0 32px", maxWidth: 1280, margin: "0 auto" },
@@ -104,7 +107,7 @@ function Navbar() {
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-600/25 ring-1 ring-inset ring-violet-400/25"
           >
             <img
-              src="/logo.png"
+              src={logoSrc}
               alt=""
               className="h-full w-full object-contain"
             />

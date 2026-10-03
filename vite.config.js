@@ -3,5 +3,15 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-plugins: [react(), tailwindcss()],
+base: "/LearnSphereHub/",
+
+plugins: [
+react(),
+tailwindcss(),
+],
+
+build: {
+outDir: "dist",
+assetsDir: "assets",
+},
 });
