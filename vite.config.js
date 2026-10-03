@@ -4,14 +4,5 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
 base: "/LearnSphereHub/",
-
-plugins: [
-react(),
-tailwindcss(),
-],
-
-build: {
-outDir: "dist",
-assetsDir: "assets",
-},
+plugins: [react(), tailwindcss()],
 });
